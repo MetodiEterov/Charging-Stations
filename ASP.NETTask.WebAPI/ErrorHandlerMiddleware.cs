@@ -1,29 +1,21 @@
-﻿namespace ASP.NETTask.WebAPI
+using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+using Entities.Contracts;
+using Entities.Helpers;
+
+using Microsoft.AspNetCore.Http;
+
+namespace ASP.NETTask.WebAPI
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Net;
-    using System.Text.Json;
-    using System.Threading.Tasks;
-
-    using Entities.Contracts;
-    using Entities.Helpers;
-
-    using Microsoft.AspNetCore.Http;
-
-    /// <summary>
-    /// ErrorHandlerMiddleware class
-    /// </summary>
     public class ErrorHandlerMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILoggerManager _logger;
 
-        /// <summary>
-        /// ErrorHandlerMiddleware constructor
-        /// </summary>
-        /// <param name="next"></param>
-        /// <param name="logger"></param>
         public ErrorHandlerMiddleware(RequestDelegate next
             , ILoggerManager logger)
         {
@@ -31,11 +23,6 @@
             _logger = logger;
         }
 
-        /// <summary>
-        /// Invoke method
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
         public async Task Invoke(HttpContext context)
         {
             try
