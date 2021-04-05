@@ -1,18 +1,12 @@
+using AutoMapper;
+
+using Entities.DTOs;
+using Entities.Models;
+
 namespace ASP.NETTask.WebAPI.AutoMapperProfiles
 {
-    using AutoMapper;
-
-    using Entities.DTOs;
-    using Entities.Models;
-
-    /// <summary>
-    /// AutoMapperProfile class
-    /// </summary>
     public class AutoMapperProfile : Profile
     {
-        /// <summary>
-        /// AutoMapperProfile constructor
-        /// </summary>
         public AutoMapperProfile()
         {
             CreateMap<ChargePointDto, ChargePoint>()
