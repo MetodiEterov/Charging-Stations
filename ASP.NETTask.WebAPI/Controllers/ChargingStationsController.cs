@@ -1,17 +1,14 @@
+using System.Threading.Tasks;
+
+using AutoMapper;
+using Entities.DTOs;
+using Entities.Models;
+using Entities.Contracts;
+
+using Microsoft.AspNetCore.Mvc;
+
 namespace ASP.NETTask.WebAPI.Controllers
 {
-    using System.Threading.Tasks;
-
-    using AutoMapper;
-    using Entities.DTOs;
-    using Entities.Models;
-    using Entities.Contracts;
-
-    using Microsoft.AspNetCore.Mvc;
-
-    /// <summary>
-    /// ChargingStationsController controller
-    /// </summary>
     [Route("ChargingStations")]
     [ApiController]
     public class ChargingStationsController : ControllerBase
@@ -20,12 +17,6 @@ namespace ASP.NETTask.WebAPI.Controllers
         private readonly IMessageBroker _messageBroker;
         private readonly IMapper _mapper;
 
-        /// <summary>
-        /// ChargingStationsController constructor
-        /// </summary>
-        /// <param name="locationRepository"></param>
-        /// <param name="mapper"></param>
-        /// <param name="messageBroker"></param>
         public ChargingStationsController(
             ILocationRepository<BaseClass> locationRepository
             , IMapper mapper
@@ -36,10 +27,6 @@ namespace ASP.NETTask.WebAPI.Controllers
             _messageBroker = messageBroker;
         }
 
-        /// <summary>
-        /// Get method
-        /// </summary>
-        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -51,11 +38,6 @@ namespace ASP.NETTask.WebAPI.Controllers
             return Ok(locations);
         }
 
-        /// <summary>
-        /// Get method
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet("{id}", Name = "Get")]
         public async Task<IActionResult> Get(string id)
         {
@@ -69,11 +51,6 @@ namespace ASP.NETTask.WebAPI.Controllers
             return Ok(location);
         }
 
-        /// <summary>
-        /// Post method
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] LocationRequestModelDto entity)
         {
@@ -85,11 +62,6 @@ namespace ASP.NETTask.WebAPI.Controllers
             return Ok(location);
         }
 
-        /// <summary>
-        /// Put method
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
         [HttpPut]
         public async Task<IActionResult> Put([FromBody] ChargePointRequestModelDto entity)
         {
@@ -101,11 +73,6 @@ namespace ASP.NETTask.WebAPI.Controllers
             return Ok(location);
         }
 
-        /// <summary>
-        /// Patch method
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
         [HttpPatch]
         public async Task<IActionResult> Patch([FromBody] PatchLocationRequestModelDto entity)
         {
