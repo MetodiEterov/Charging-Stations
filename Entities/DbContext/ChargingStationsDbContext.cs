@@ -1,37 +1,20 @@
+using System;
+
+using Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace Entities.DbContext
 {
-    using System;
-
-    using Models;
-    using Microsoft.EntityFrameworkCore;
-
-    /// <summary>
-    /// ChargingStationsDbContext class
-    /// </summary>
     public class ChargingStationsDbContext : DbContext
     {
-        /// <summary>
-        /// ChargingStationsDbContext constructor
-        /// </summary>
-        /// <param name="options"></param>
         public ChargingStationsDbContext(DbContextOptions options) : base(options)
         {
         }
 
-        /// <summary>
-        /// Locations property
-        /// </summary>
         public DbSet<Location> Locations { get; set; }
 
-        /// <summary>
-        /// ChargePoints property
-        /// </summary>
         public DbSet<ChargePoint> ChargePoints { get; set; }
 
-        /// <summary>
-        /// OnModelCreating method
-        /// </summary>
-        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             var location1 = new Location
