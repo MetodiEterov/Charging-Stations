@@ -1,19 +1,12 @@
+using System.Text;
+
+using Entities.Contracts;
+using RabbitMQ.Client;
+
 namespace Repository.Repositories
 {
-    using System.Text;
-
-    using Entities.Contracts;
-    using RabbitMQ.Client;
-
-    /// <summary>
-    /// MessageBroker class
-    /// </summary>
     public class MessageBroker : IMessageBroker
     {
-        /// <summary>
-        /// SendMessageToQueu method
-        /// </summary>
-        /// <param name="message"></param>
         public void SendMessageToQueu(string message)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
