@@ -1,20 +1,14 @@
+using System;
+using System.Text;
+using System.Threading;
+
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
+
 namespace ASP.NETTask.MSMQ
 {
-    using System;
-    using System.Text;
-    using System.Threading;
-
-    using RabbitMQ.Client;
-    using RabbitMQ.Client.Events;
-
-    /// <summary>
-    /// Represents a message broker
-    /// </summary>
     internal class Program
     {
-        /// <summary>
-        /// Entry point
-        /// </summary>
         private static void Main()
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
