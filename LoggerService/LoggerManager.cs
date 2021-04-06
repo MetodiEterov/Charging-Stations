@@ -1,4 +1,5 @@
 using Entities.Contracts;
+
 using NLog;
 
 namespace LoggerService

@@ -35,7 +35,7 @@ namespace ASP.NETTask.WebAPI.Controllers
             var locations = await _locationRepository.GetAllLocation();
             if (locations == null) return NotFound();
 
-            _messageBroker.SendMessageToQueu("All locations were loaded!");
+            _messageBroker.SendMessageToQueue("All locations were loaded!");
 
             return Ok(locations);
         }
@@ -49,7 +49,7 @@ namespace ASP.NETTask.WebAPI.Controllers
             var location = await _locationRepository.GetLocationById(id);
             if (location == null) return NotFound("The location couldn't be found.");
 
-            _messageBroker.SendMessageToQueu("The location by Id was loaded!");
+            _messageBroker.SendMessageToQueue("The location by Id was loaded!");
 
             return Ok(location);
         }
@@ -61,7 +61,7 @@ namespace ASP.NETTask.WebAPI.Controllers
             if (!ModelState.IsValid || entity == null) return BadRequest();
 
             var location = await _locationRepository.AddNewLocation(_mapper.Map<LocationRequestModel>(entity));
-            _messageBroker.SendMessageToQueu("The new locations has been created!");
+            _messageBroker.SendMessageToQueue("The new locations has been created!");
 
             return Ok(location);
         }
@@ -73,7 +73,7 @@ namespace ASP.NETTask.WebAPI.Controllers
             if (!ModelState.IsValid || entity == null) return BadRequest();
 
             var location = await _locationRepository.PutLocation(_mapper.Map<ChargePointRequestModel>(entity));
-            _messageBroker.SendMessageToQueu("The new locations has been upated!");
+            _messageBroker.SendMessageToQueue("The new locations has been upated!");
 
             return Ok(location);
         }
@@ -85,7 +85,7 @@ namespace ASP.NETTask.WebAPI.Controllers
             if (!ModelState.IsValid || entity == null) return BadRequest();
 
             var location = await _locationRepository.PatchLocation(_mapper.Map<PatchLocationRequestModel>(entity));
-            _messageBroker.SendMessageToQueu("The new locations has been updated!");
+            _messageBroker.SendMessageToQueue("The new locations has been updated!");
 
             return Ok(location);
         }

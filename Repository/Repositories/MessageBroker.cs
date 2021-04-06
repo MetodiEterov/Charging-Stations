@@ -8,7 +8,7 @@ namespace Repository.Repositories
 {
     public class MessageBroker : IMessageBroker
     {
-        public void SendMessageToQueu(string message)
+        public void SendMessageToQueue(string message)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using var connection = factory.CreateConnection();
