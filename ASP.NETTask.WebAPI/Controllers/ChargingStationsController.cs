@@ -26,7 +26,8 @@ namespace ASP.NETTask.WebAPI.Controllers
             _mapper = mapper;
             _messageBroker = messageBroker;
         }
-
+        
+        // GET api/values
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -37,7 +38,8 @@ namespace ASP.NETTask.WebAPI.Controllers
 
             return Ok(locations);
         }
-
+        
+        // GET api/values/5
         [HttpGet("{id}", Name = "Get")]
         public async Task<IActionResult> Get(string id)
         {
@@ -50,7 +52,8 @@ namespace ASP.NETTask.WebAPI.Controllers
 
             return Ok(location);
         }
-
+        
+        // POST api/values
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] LocationRequestModelDto entity)
         {
@@ -61,7 +64,8 @@ namespace ASP.NETTask.WebAPI.Controllers
 
             return Ok(location);
         }
-
+        
+        // PUT api/values/5
         [HttpPut]
         public async Task<IActionResult> Put([FromBody] ChargePointRequestModelDto entity)
         {
@@ -72,7 +76,8 @@ namespace ASP.NETTask.WebAPI.Controllers
 
             return Ok(location);
         }
-
+        
+        // PATCH api/values/5
         [HttpPatch]
         public async Task<IActionResult> Patch([FromBody] PatchLocationRequestModelDto entity)
         {
