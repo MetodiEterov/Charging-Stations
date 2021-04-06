@@ -1,4 +1,4 @@
- using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Entities.DbContext;
 using Entities.Models;
 using Entities.Contracts;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Repositories

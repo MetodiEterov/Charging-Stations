@@ -1,6 +1,7 @@
 using System.Text;
 
 using Entities.Contracts;
+
 using RabbitMQ.Client;
 
 namespace Repository.Repositories

@@ -1,19 +1,17 @@
-using System;
 
-using Models;
-using Microsoft.EntityFrameworkCore;
+using Entities.Models;
+
+using System;
 
 namespace Entities.DbContext
 {
+    using Microsoft.EntityFrameworkCore;
+
     public class ChargingStationsDbContext : DbContext
     {
         public ChargingStationsDbContext(DbContextOptions options) : base(options)
         {
         }
-
-        public DbSet<Location> Locations { get; set; }
-
-        public DbSet<ChargePoint> ChargePoints { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -105,5 +103,9 @@ namespace Entities.DbContext
                 LocationId = location2.LocationId
             });
         }
+
+        public DbSet<ChargePoint> ChargePoints { get; set; }
+
+        public DbSet<Location> Locations { get; set; }
     }
 }
