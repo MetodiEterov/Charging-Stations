@@ -7,8 +7,14 @@ using RabbitMQ.Client.Events;
 
 namespace ASP.NETTask.MSMQ
 {
+    /// <summary>
+    /// Program class
+    /// </summary>
     internal class Program
     {
+        /// <summary>
+        /// Main method
+        /// </summary>
         private static void Main()
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
