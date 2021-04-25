@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ASP.NETTask.WebAPI.Controllers
 {
+    /// <summary>
+    /// ChargingStationsController class
+    /// </summary>
     [Route("ChargingStations")]
     [ApiController]
     public class ChargingStationsController : ControllerBase
@@ -27,7 +30,11 @@ namespace ASP.NETTask.WebAPI.Controllers
             _mapper = mapper;
             _messageBroker = messageBroker;
         }
-        
+
+        /// <summary>
+        /// Get method
+        /// </summary>
+        /// <returns></returns>
         // GET api/values
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -39,7 +46,12 @@ namespace ASP.NETTask.WebAPI.Controllers
 
             return Ok(locations);
         }
-        
+
+        /// <summary>
+        /// Get by Id method
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET api/values/5
         [HttpGet("{id}", Name = "Get")]
         public async Task<IActionResult> Get(string id)
@@ -53,7 +65,12 @@ namespace ASP.NETTask.WebAPI.Controllers
 
             return Ok(location);
         }
-        
+
+        /// <summary>
+        /// Post method
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         // POST api/values
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] LocationRequestModelDto entity)
@@ -65,7 +82,12 @@ namespace ASP.NETTask.WebAPI.Controllers
 
             return Ok(location);
         }
-        
+
+        /// <summary>
+        /// Put method
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         // PUT api/values/5
         [HttpPut]
         public async Task<IActionResult> Put([FromBody] ChargePointRequestModelDto entity)
@@ -77,7 +99,12 @@ namespace ASP.NETTask.WebAPI.Controllers
 
             return Ok(location);
         }
-        
+
+        /// <summary>
+        /// Patch method
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         // PATCH api/values/5
         [HttpPatch]
         public async Task<IActionResult> Patch([FromBody] PatchLocationRequestModelDto entity)

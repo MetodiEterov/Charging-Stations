@@ -1,4 +1,3 @@
-
 using Entities.Models;
 
 using System;
@@ -7,6 +6,9 @@ namespace Entities.DbContext
 {
     using Microsoft.EntityFrameworkCore;
 
+    /// <summary>
+    /// ChargingStationsDbContext class
+    /// </summary>
     public class ChargingStationsDbContext : DbContext
     {
         public ChargingStationsDbContext(DbContextOptions options) : base(options)

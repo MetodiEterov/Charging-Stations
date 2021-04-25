@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entities.Models
 {
+    /// <summary>
+    /// ChargePointRequestModel class
+    /// </summary>
     public class ChargePointRequestModel
     {
         [Required]

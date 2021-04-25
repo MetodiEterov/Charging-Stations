@@ -1,5 +1,8 @@
 namespace Entities.Contracts
 {
+    /// <summary>
+    /// ILoggerManager interface
+    /// </summary>
     public interface ILoggerManager
     {
         void LogInfo(string message);

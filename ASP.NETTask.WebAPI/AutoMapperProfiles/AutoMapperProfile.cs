@@ -5,6 +5,9 @@ using Entities.Models;
 
 namespace ASP.NETTask.WebAPI.AutoMapperProfiles
 {
+    /// <summary>
+    /// AutoMapperProfile class
+    /// </summary>
     public class AutoMapperProfile : Profile
     {
         public AutoMapperProfile()

@@ -3,6 +3,9 @@ using System.Globalization;
 
 namespace Entities.Helpers
 {
+    /// <summary>
+    /// AppException class
+    /// </summary>
     public class AppException : Exception
     {
         public AppException() : base() { }

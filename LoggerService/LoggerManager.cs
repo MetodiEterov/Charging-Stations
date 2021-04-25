@@ -4,6 +4,9 @@ using NLog;
 
 namespace LoggerService
 {
+    /// <summary>
+    /// LoggerManager class
+    /// </summary>
     public class LoggerManager : ILoggerManager
     {
         private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();

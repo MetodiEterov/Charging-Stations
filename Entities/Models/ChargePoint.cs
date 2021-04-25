@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models
 {
+    /// <summary>
+    /// ChargePoint class
+    /// </summary>
     public class ChargePoint
     {
         [Key]

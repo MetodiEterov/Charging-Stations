@@ -1,16 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 using Entities.Contracts;
 using Entities.DbContext;
 using Entities.Models;
 
 using Microsoft.EntityFrameworkCore;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Repository.Repositories
 {
+    /// <summary>
+    /// LocationRepository class 
+    /// </summary>
     public class LocationRepository : ILocationRepository<BaseClass>
     {
         private readonly ChargingStationsDbContext _chargingStationsDbContext;
@@ -18,6 +21,12 @@ namespace Repository.Repositories
         public LocationRepository(ChargingStationsDbContext chargingStationsDbContext)
         { _chargingStationsDbContext = chargingStationsDbContext; }
 
+        /// <summary>
+        /// SetNewLocation method
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="currentStation"></param>
+        /// <returns></returns>
         private static Location SetNewLocation(BaseClass entity, Location currentStation)
         {
             return new Location
@@ -33,6 +42,13 @@ namespace Repository.Repositories
             };
         }
 
+        /// <summary>
+        /// UpdateStation method
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="stationsById"></param>
+        /// <param name="updatedStation"></param>
+        /// <returns></returns>
         private async Task<ChargePoint> UpdateStation(ChargePointRequestModel entity, List<ChargePoint> stationsById, ChargePoint updatedStation)
         {
             foreach (var item in stationsById)
@@ -68,6 +84,11 @@ namespace Repository.Repositories
             return updatedStation;
         }
 
+        /// <summary>
+        /// AddNewLocation method
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task<Location> AddNewLocation(BaseClass entity)
         {
             var newLocation = new Location
@@ -88,12 +109,26 @@ namespace Repository.Repositories
             return newLocation;
         }
 
+        /// <summary>
+        /// GetAllLocation method
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<Location>> GetAllLocation()
         { return await _chargingStationsDbContext.Locations.ToListAsync(); }
 
+        /// <summary>
+        /// GetLocationById method
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<BaseClass> GetLocationById(string id)
         { return await _chargingStationsDbContext.Locations.FirstOrDefaultAsync(e => e.LocationId == id); }
 
+        /// <summary>
+        /// PatchLocation method
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task<Location> PatchLocation(BaseClass entity)
         {
             var currentStation = await _chargingStationsDbContext.Locations
@@ -114,6 +149,11 @@ namespace Repository.Repositories
             return updateLocation;
         }
 
+        /// <summary>
+        /// PutLocation method
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task<ChargePoint> PutLocation(ChargePointRequestModel entity)
         {
             var stationsById = await _chargingStationsDbContext.ChargePoints

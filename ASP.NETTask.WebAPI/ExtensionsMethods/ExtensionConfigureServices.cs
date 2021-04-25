@@ -14,8 +14,16 @@ using Repository.Repositories;
 
 namespace ASP.NETTask.WebAPI.ExtensionsMethods
 {
+    /// <summary>
+    /// ExtensionConfigureServices static class
+    /// </summary>
     public static class ExtensionConfigureServices
     {
+        /// <summary>
+        /// ConfigureConfigureServicesInjuection method
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
         public static void ConfigureConfigureServicesInjuection(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ChargingStationsDbContext>(options =>

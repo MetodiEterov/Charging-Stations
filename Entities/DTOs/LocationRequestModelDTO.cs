@@ -2,6 +2,9 @@ using System;
 
 namespace Entities.DTOs
 {
+    /// <summary>
+    /// LocationRequestModelDto class
+    /// </summary>
     public class LocationRequestModelDto
     {
         public string LocationId { get; set; }

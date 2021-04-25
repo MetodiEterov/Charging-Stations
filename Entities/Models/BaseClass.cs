@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entities.Models
 {
+    /// <summary>
+    /// BaseClass class
+    /// </summary>
     public abstract class BaseClass
     {
         [Required]

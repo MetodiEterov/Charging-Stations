@@ -1,5 +1,8 @@
 namespace Entities.DTOs
 {
+    /// <summary>
+    /// ChargePointDto class
+    /// </summary>
     public class ChargePointDto
     {
         public string ChargePointId { get; set; }

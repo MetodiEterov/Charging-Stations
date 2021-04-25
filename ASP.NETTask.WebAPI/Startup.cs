@@ -1,4 +1,4 @@
-using ExtensionsMethods;
+using ASP.NETTask.WebAPI.ExtensionsMethods;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +8,9 @@ using Microsoft.Extensions.Hosting;
 
 namespace ASP.NETTask.WebAPI
 {
+    /// <summary>
+    /// Startup class
+    /// </summary>
     public class Startup
     {
         public Startup(IConfiguration configuration)
